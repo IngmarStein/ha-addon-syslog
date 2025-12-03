@@ -191,6 +191,9 @@ while True:
         else:
             msg = entry.get("MESSAGE")
 
+        if isinstance(msg, str):
+            msg = msg.replace("\n", "#012").replace("\r", "")
+
         # determine syslog level
         if not container_name:
             log_level = LOGGING_JOURNAL_PRIORITY_TO_LEVEL_MAPPING[
