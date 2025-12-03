@@ -125,7 +125,7 @@ class RFC5424Formatter(logging.Formatter):
     def formatTime(self, record, datefmt=None):
         """Return the creation time of the specified LogRecord as formatted text."""
         dt = datetime.datetime.fromtimestamp(record.created, datetime.timezone.utc)
-        return dt.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+        return dt.isoformat(timespec="microseconds").replace("+00:00", "Z")
 
 
 def parse_log_level(message: str, container_name: str) -> int:
