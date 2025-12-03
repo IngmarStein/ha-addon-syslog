@@ -14,7 +14,7 @@
 
 ## 0.3.0
 
-- Add tls support
+- Add TLS support
 
 ## 0.2.0
 
